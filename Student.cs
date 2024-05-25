@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bai1_Lab1
+namespace Bai2_Lab2
 {
     internal class Student
     {
         private int ID;
-        private string TenSV;
         private string Khoa;
+        private string TenSV;
         private float DiemTB;
 
-        public Student() //Constructor mac dinh (default constructor)
+        public Student() //Default constructor
         {
             ID = 1;
             TenSV = "Pham Xuan Dat";
@@ -24,7 +23,7 @@ namespace Bai1_Lab1
 
         public Student(Student stu) //Copy constructor
         {
-            SID = stu.ID;
+            ID = stu.ID;
             TenSV = stu.TenSV;
             Khoa = stu.Khoa;
             DiemTB = stu.DiemTB;
@@ -33,43 +32,34 @@ namespace Bai1_Lab1
         //Constructor with parameters
         public Student(int id, string ten, string kh, float dtb)
         {
-            SID = id;
+            ID = id;
             TenSV = ten;
             Khoa = kh;
             DiemTB = dtb;
         }
 
-        //Properties for each attribute of the class
-        public int StudentID
-        {
-            get { return ID; } //Get data
-            set { SID = value; } //Set data
-        }
+        public int GetStudentId() => ID;
+        public void SetStudentId(int value) => ID = value;
 
-        public String Name
-        {
-            get { return TenSV; }
-            set { TenSV = value; }
-        }
+        public string getName() => TenSV;
+        public void setName(string value) => TenSV = value;
 
-        public String Faculty
-        {
-            get { return Khoa; }
-            set { Khoa = value; }
-        }
+        public string GetFaculty() => Khoa;
+        public void SetFaculty(string value) => Khoa = value;
 
-        public float Mark
-        {
-            get { return DiemTB; }
-            set { DiemTB = value; }
-        }
+        public float GetMark() => DiemTB;
+        public void SetMark(float value) => DiemTB = value;
 
         public void Show()
         {
-            Console.WriteLine("ID: " + ID);
-            Console.WriteLine("Họ và tên: " + Name);
-            Console.WriteLine("Khoa: " + Faculty);
-            Console.WriteLine("Điểm trung bình: " + Mark);
+            Console.WriteLine("ID: " + GetStudentId());
+            Console.WriteLine("Họ và tên: " + getName());
+            Console.WriteLine("Khoa: " + GetFaculty());
+            Console.WriteLine("Điểm trung bình: " + GetMark());
         }
 
     }
+
+}
+   
+
